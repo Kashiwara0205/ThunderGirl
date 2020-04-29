@@ -1,0 +1,22 @@
+{
+  "name": "thunder-girl",
+  "version": "1.0.0",
+  "description": "Read the array little by little",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kashiwara0205/thunderGirl.git"
+  },
+  "author": "Kashiwara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kashiwara0205/thunderGirl/issues"
+  },
+  "homepage": "https://github.com/Kashiwara0205/thunderGirl#readme",
+  "devDependencies": {
+    "ava": "^3.8.1"
+  }
+}
