@@ -1,12 +1,19 @@
-const hello = function(){
-  return "hello"
+function sleep(sec) {
+  return new Promise(function (resolve) {
+      setTimeout(function() { resolve() }, sec);
+  });
 }
 
-const hello2 = function(){
-  return "hello2"
+const load = async function(destination_arr, source_arr, split, sec){
+  let index = 0;
+  while(index < source_arr.length){
+    await sleep(sec)
+    let splited_arr = source_arr.slice(index, index + split)
+    index += split
+    Array.prototype.push.apply(destination_arr,splited_arr);
+  }
 }
 
 module.exports = {
-  hello: hello,
-  hello2: hello2
+  load: load,
 }
