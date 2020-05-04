@@ -104,3 +104,33 @@ test('should accumulately load source_arr to destination_arr', async t => {
   t.is(2, destination_arr[1]);
   t.is(3, destination_arr[2]);
 });
+
+test('should not load source_arr to destination_arr when slice is 0', async t => {
+  let destination_arr = []
+  let source_arr = [1, 2, 3]
+
+  const error = await t.throwsAsync(thunderGirl.load(destination_arr, source_arr, 0, 0))
+  t.is(error.message, 'invalid split number. please make it a number greater than 0');
+});
+
+test('should not load source_arr to destination_arr when slice is str', async t => {
+  let destination_arr = []
+  let source_arr = [1, 2, 3]
+
+  let error = await t.throwsAsync(thunderGirl.load(destination_arr, source_arr, "a", 0))
+  t.is(error.message, 'split is not number type');
+
+  error = await t.throwsAsync(thunderGirl.load(destination_arr, source_arr, "1", 0))
+  t.is(error.message, 'split is not number type');
+});
+
+test('should not load source_arr to destination_arr when msec is str', async t => {
+  let destination_arr = []
+  let source_arr = [1, 2, 3]
+
+  let error = await t.throwsAsync(thunderGirl.load(destination_arr, source_arr, 1, "a"))
+  t.is(error.message, 'msec is not number type');
+
+  error = await t.throwsAsync(thunderGirl.load(destination_arr, source_arr, 1, "1"))
+  t.is(error.message, 'msec is not number type');
+});

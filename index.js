@@ -1,17 +1,21 @@
+class InvalidNumberError extends Error {}
+
 function check_args(split, msec){
-  if(isNaN(split)){
-    const msg = "invalid split" 
-    throw msg  
+
+
+  if(!Number.isInteger(split)){
+    const msg = "split is not number type" 
+    throw new TypeError(msg)
   }
 
-  if(isNaN(msec)){
-    const msg = "invalid msec" 
-    throw msg  
+  if(!Number.isInteger(msec)){
+    const msg = "msec is not number type" 
+    throw new TypeError(msg)
   }
 
   if (split < 1){
-    const msg = "invalid split number size" 
-    throw msg
+    const msg = "invalid split number. please make it a number greater than 0"
+    throw new InvalidNumberError(msg)
   }
 }
 
@@ -29,6 +33,7 @@ function rest_array(destination_arr){
 // so, Not calling acc_load
 // perhaps The cause is async
 const load = async function(destination_arr, source_arr, split, msec){
+  check_args(split, msec)
   rest_array(destination_arr)
   let index = 0;
   while(index < source_arr.length){
