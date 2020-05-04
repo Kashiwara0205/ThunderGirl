@@ -1,7 +1,16 @@
-function check_args(split){
-  // check split
+function check_args(split, m_sec){
+  if(isNaN(split)){
+    const msg = "invalid split" 
+    throw msg  
+  }
+
+  if(isNaN(m_sec)){
+    const msg = "invalid m_sec" 
+    throw msg  
+  }
+
   if (split < 1){
-    const msg = "invalid split number" 
+    const msg = "invalid split number size" 
     throw msg
   }
 }
@@ -12,9 +21,17 @@ function sleep(sec) {
   });
 }
 
+function rest_array(destination_arr){
+  destination_arr.splice(0, destination_arr.length)
+}
+
 const load = async function(destination_arr, source_arr, split, m_sec){
-  check_args(split)
-  
+  rest_array(destination_arr)
+  acc_load(destination_arr, source_arr, split, m_sec)
+}
+
+const acc_load = async function(destination_arr, source_arr, split, m_sec){
+  check_args(split, m_sec)
   let index = 0;
   while(index < source_arr.length){
     let splited_arr = source_arr.slice(index, index + split)
@@ -26,4 +43,7 @@ const load = async function(destination_arr, source_arr, split, m_sec){
   }
 }
 
-module.exports = { load: load }
+module.exports = { 
+  load: load,
+  acc_load: acc_load
+}
