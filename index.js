@@ -1,8 +1,6 @@
 class InvalidNumberError extends Error {}
 
 function check_args(split, msec){
-
-
   if(!Number.isInteger(split)){
     const msg = "split is not number type" 
     throw new TypeError(msg)
