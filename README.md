@@ -4,6 +4,12 @@
 
 npm library for vue lazy drawing
 
+## Getting started
+
+```
+npm i thunder-girl
+```
+
 ## Usage
 Reads an array every specified number of milliseconds
 
@@ -23,10 +29,20 @@ thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
 |slice|divide the array. integer type|
 |msec|sleep mse. integer type|
 
-## Getting started
+## vue example code
 
 ```
-npm i thunder-girl
+methods:{
+  reload: async function(){
+    await thunderGirl.load(this.disp, this.table_data, parseInt(5), parseInt(50))
+    console.log("complete reload")
+  },
+
+  acc_load: async function(){
+    await thunderGirl.acc_load(this.disp, this.table_data, parseInt(5), parseInt(50))
+    console.log("complete acc_load")
+  }
+},
 ```
 
 ## License
