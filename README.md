@@ -26,14 +26,14 @@ thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
 |:---|:---|
 |destination_arr|destination array. array type|
 |source_arr|source array. array type|
-|slice|divide the array. integer type|
-|msec|sleep mse. integer type|
+|slice|number of arrays to divide. integer type|
+|msec|sleep msec. integer type|
 
 ## vue example code
 
 ```
 methods:{
-  reload: async function(){
+  load: async function(){
     await thunderGirl.load(this.disp, this.table_data, parseInt(5), parseInt(50))
     console.log("complete reload")
   },
