@@ -1,7 +1,7 @@
 {
   "name": "thunder-girl",
   "version": "1.0.0",
-  "description": "Read the array little by little",
+  "description": "npm library for vue lazy drawing",
   "main": "index.js",
   "scripts": {
     "test": "ava -v"
