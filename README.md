@@ -16,7 +16,6 @@ thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
 ```
 
 ## args
-
 |Name|description|
 |:---|:---|
 |destination_arr|destination array. array type|
@@ -29,3 +28,6 @@ thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
 ```
 npm i thunder-girl
 ```
+
+## License
+The libray is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
