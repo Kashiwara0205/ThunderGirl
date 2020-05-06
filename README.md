@@ -11,7 +11,7 @@ npm i thunder-girl
 ```
 
 ## Usage
-Reads an array every specified number of milliseconds
+Loads an array every specified number of milliseconds
 
 ```
 thunderGirl.load(destination_arr, source_arr, slice, msec)
@@ -34,16 +34,19 @@ thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
 ```
 methods:{
   load: async function(){
-    await thunderGirl.load(this.disp, this.table_data, parseInt(5), parseInt(50))
+    await thunderGirl.load(this.disp_table, this.source_table, 5, 50)
     console.log("complete reload")
   },
 
   acc_load: async function(){
-    await thunderGirl.acc_load(this.disp, this.table_data, parseInt(5), parseInt(50))
+    await thunderGirl.acc_load(this.disp_table, this.source_table, 5, 50)
     console.log("complete acc_load")
   }
 },
 ```
+
+## Demo
+https://github.com/Kashiwara0205/thunderGirl-demo
 
 ## License
 The libray is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
