@@ -1,6 +1,6 @@
 {
   "name": "thunder-girl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "npm library for vue lazy drawing",
   "main": "index.js",
   "scripts": {
