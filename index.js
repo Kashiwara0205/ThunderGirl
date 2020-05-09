@@ -27,8 +27,8 @@ function rest_array(destination_arr){
   destination_arr.splice(0, destination_arr.length)
 }
 
-// if call acc_load in load method then npm test failed
-// so, Not calling acc_load
+// if call accLoad in load method then npm test failed
+// so, Not calling accLoad
 // perhaps The cause is async
 const load = async function(destination_arr, source_arr, split, msec){
   check_args(split, msec)
@@ -44,7 +44,7 @@ const load = async function(destination_arr, source_arr, split, msec){
   }
 }
 
-const acc_load = async function(destination_arr, source_arr, split, msec){
+const accLoad = async function(destination_arr, source_arr, split, msec){
   check_args(split, msec)
   let index = 0;
   while(index < source_arr.length){
@@ -59,5 +59,5 @@ const acc_load = async function(destination_arr, source_arr, split, msec){
 
 module.exports = { 
   load: load,
-  acc_load: acc_load
+  accLoad: accLoad
 }

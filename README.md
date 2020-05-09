@@ -34,15 +34,29 @@ thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
 ```
 methods:{
   load: async function(){
-    await thunderGirl.load(this.disp_table, this.source_table, 5, 50)
+    await thunderGirl.load(this.dispTable, this.sourceTable, 5, 50)
     console.log("complete reload")
   },
 
-  acc_load: async function(){
-    await thunderGirl.acc_load(this.disp_table, this.source_table, 5, 50)
-    console.log("complete acc_load")
+  accLoad: async function(){
+    await thunderGirl.accLoad(this.dispTable, this.sourceTable, 5, 50)
+    console.log("complete accLoad")
   }
-},
+}
+```
+
+## vue example code (ts version)
+
+```
+async load(){
+  await thunderGirl.load(this.dispTable, this.sourceTable, 5, 50)
+  console.log("complete reload")
+}
+
+async accLoad(){
+  await thunderGirl.accLoad(this.dispTable, this.sourceTable, 5, 50)
+  console.log("complete accLoad")
+}
 ```
 
 ## Demo

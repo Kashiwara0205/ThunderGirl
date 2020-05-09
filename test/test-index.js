@@ -77,13 +77,13 @@ test('should accumulately load source_arr to destination_arr', async t => {
   let destination_arr = []
   let source_arr = [1, 2, 3]
 
-  await thunderGirl.acc_load(destination_arr, source_arr, 3, 0)
+  await thunderGirl.accLoad(destination_arr, source_arr, 3, 0)
   t.is(3, destination_arr.length);
   t.is(1, destination_arr[0]);
   t.is(2, destination_arr[1]);
   t.is(3, destination_arr[2]);
 
-  await thunderGirl.acc_load(destination_arr, source_arr, 3, 0)
+  await thunderGirl.accLoad(destination_arr, source_arr, 3, 0)
   t.is(6, destination_arr.length);
   t.is(1, destination_arr[0]);
   t.is(2, destination_arr[1]);
@@ -92,7 +92,7 @@ test('should accumulately load source_arr to destination_arr', async t => {
   t.is(2, destination_arr[1]);
   t.is(3, destination_arr[2]);
 
-  await thunderGirl.acc_load(destination_arr, source_arr, 3, 0)
+  await thunderGirl.accLoad(destination_arr, source_arr, 3, 0)
   t.is(9, destination_arr.length);
   t.is(1, destination_arr[0]);
   t.is(2, destination_arr[1]);
