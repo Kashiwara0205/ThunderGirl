@@ -1,6 +1,6 @@
 class InvalidNumberError extends Error {}
 
-function check_args(split, msec){
+function checkArgs(split, msec){
   if(!Number.isInteger(split)){
     const msg = "split is not number type" 
     throw new TypeError(msg)
@@ -23,36 +23,36 @@ function sleep(sec) {
   });
 }
 
-function rest_array(destination_arr){
-  destination_arr.splice(0, destination_arr.length)
+function restArray(destinationArr){
+  destinationArr.splice(0, destinationArr.length)
 }
 
 // if call accLoad in load method then npm test failed
 // so, Not calling accLoad
 // perhaps The cause is async
-const load = async function(destination_arr, source_arr, split, msec){
-  check_args(split, msec)
-  rest_array(destination_arr)
+const load = async function(destinationArr, sourceArr, split, msec){
+  checkArgs(split, msec)
+  restArray(destinationArr)
   let index = 0;
-  while(index < source_arr.length){
-    let splited_arr = source_arr.slice(index, index + split)
+  while(index < sourceArr.length){
+    let splited_arr = sourceArr.slice(index, index + split)
     index += split
     // vue don't detect concat method
     // so, instead of concat use push 
-    for(let i = 0; i < splited_arr.length; i++){ destination_arr.push(splited_arr[i]) }
+    for(let i = 0; i < splited_arr.length; i++){ destinationArr.push(splited_arr[i]) }
     await sleep(msec)
   }
 }
 
-const accLoad = async function(destination_arr, source_arr, split, msec){
-  check_args(split, msec)
+const accLoad = async function(destinationArr, sourceArr, split, msec){
+  checkArgs(split, msec)
   let index = 0;
-  while(index < source_arr.length){
-    let splited_arr = source_arr.slice(index, index + split)
+  while(index < sourceArr.length){
+    let splited_arr = sourceArr.slice(index, index + split)
     index += split
     // vue don't detect concat method
     // so, instead of concat use push 
-    for(let i = 0; i < splited_arr.length; i++){ destination_arr.push(splited_arr[i]) }
+    for(let i = 0; i < splited_arr.length; i++){ destinationArr.push(splited_arr[i]) }
     await sleep(msec)
   }
 }
