@@ -14,18 +14,18 @@ npm i thunder-girl
 Loads an array every specified number of milliseconds
 
 ```
-thunderGirl.load(destination_arr, source_arr, slice, msec)
+thunderGirl.load(destinationArr, sourceArr, slice, msec)
 ```
 accumulate load
 ```
-thunderGirl.acc_load(destination_arr, source_arr, slice, msec)
+thunderGirl.accLoad(destinationArr, sourceArr, slice, msec)
 ```
 
 ## args
 |Name|description|
 |:---|:---|
-|destination_arr|destination array. array type|
-|source_arr|source array. array type|
+|destinationArr|destination array. array type|
+|sourceArr|source array. array type|
 |slice|number of arrays to divide. integer type|
 |msec|sleep msec. integer type|
 
