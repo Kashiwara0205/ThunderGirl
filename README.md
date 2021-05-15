@@ -45,20 +45,6 @@ methods:{
 }
 ```
 
-## vue example code (ts version)
-
-```
-async load(){
-  await thunderGirl.load(this.dispTable, this.sourceTable, 5, 50)
-  console.log("complete reload")
-}
-
-async accLoad(){
-  await thunderGirl.accLoad(this.dispTable, this.sourceTable, 5, 50)
-  console.log("complete accLoad")
-}
-```
-
 ## Demo
 https://github.com/Kashiwara0205/thunderGirl-demo
 
